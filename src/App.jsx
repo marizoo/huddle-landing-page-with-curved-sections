@@ -3,6 +3,8 @@ import Topbar from "./components/Topbar";
 import styled from "styled-components";
 import GetStartedCard from "./components/GetStartedCard";
 import Numbers from "./components/Numbers";
+import Sections from "./components/Sections";
+import Footer from "./components/Footer";
 
 const theme = {
   media: {
@@ -22,6 +24,11 @@ const theme = {
   }
 }
 
+const MainCont = styled.div`
+width: 100vw;
+overflow-x: none;
+`
+
 const Cont = styled.div`
 display: flex;
 flex-direction: column;
@@ -31,11 +38,15 @@ align-items: center;
 const App = () => {
   return (
   <ThemeProvider theme={theme}>
+    <MainCont>
     <Topbar />
     <Cont>
       <GetStartedCard />
       <Numbers />
     </Cont>
+    <Sections />
+    <Footer />
+    </MainCont>
   </ThemeProvider>
     );
 };
